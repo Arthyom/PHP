@@ -18,8 +18,10 @@
 		$VectorArray[6] = "numero6";
 		$VectorArray[7] = "numero7";
 
-		for ( $i = 0 ; i < 8 ; i ++ )
-			echo "<h1> la posicion $i del arreglo es = $VectorArray[$i] </h1>"; 
+		for ( $i = 0 ; $i < 8 ; $i ++ )
+			echo "<h1> la posicion $i del arreglo es = $VectorArray[$i] </h1>";
+
+		// notece como en caso de no existir una parte del vector la sucesion se salta  
 
 
 
