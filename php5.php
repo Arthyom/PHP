@@ -19,9 +19,6 @@
 		echo "<h1>ciudades, arreglos con for y count </h1>";
 		for ( $i=0; $i < count($vectorNombres) ; $i++) 
 			echo "$vectorNombres[$i] <br/>";
-		
-
 	?>
-
 </body>
 </html>
