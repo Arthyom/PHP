@@ -11,7 +11,8 @@
 		$MatrizVector1 [2][0] = "tres";
 
 		for ( $i = 0 ; $i < count($MatrizVector1) ; $i ++ )
-			echo "$MatrizVector1[$i][0]<br/>"; 
+			for ( $j = 0; $j < count($MatrizVector1[$i]); $j++ )
+				echo "$MatrizVector1[$i][$j]<br/>"; 
 
 	 ?>
 </body>
