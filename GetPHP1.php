@@ -18,6 +18,10 @@
 		<strong><label>Carrera</label></strong>
 		<input type="textbox" name="txtCarrera"/>
 
+		<br>
+
+		<button type="submit">Prescioname</button>
+
 	</form>
 </body>
 </html>

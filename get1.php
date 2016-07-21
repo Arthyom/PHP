@@ -10,9 +10,9 @@
 		$apell  = $_GET["txtApellido"];
 		$carrer = $_GET["txtCarrera"];
 
-		echo "Su nombre es $nombre","<br/>";
-		echo "Su apellido es $apell","<br/>";
-		echo "Su carrera es $carrera";
+		echo "Su nombre es <strong>$nombre</strong>","<br/>";
+		echo "Su apellido es <strong>$apell</strong>","<br/>";
+		echo "Su carrera es <strong>$carrer<strong>";
 
 	?>
 
