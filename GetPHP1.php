@@ -21,7 +21,13 @@
 		<br>
 
 		<button type="submit">Prescioname</button>
+	</form>
 
+	<form method="get" action="get1.php"> 
+	<h1>Area de calculos</h1>
+		<input type="textbox" name="alto">
+		<input type="textbox" name="ancho">
+		<button type="submit">Calcular</button>
 	</form>
 </body>
 </html>
