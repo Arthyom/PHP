@@ -6,7 +6,7 @@
 <body>
 	<form method="get" action="get1.php">
 		<strong><label>Nombre</label></strong>
-		<input type="textbox" name="txtName"/>
+		<input type="textbox" name="txtNombre"/>
 
 		<br>
 
