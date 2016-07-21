@@ -24,12 +24,16 @@
 			// posicionarse en una fila 
 			mysqli_data_seek($resultado,0);
 
-			// extraer los valores del arreglo
-			$extraccion = mysqli_fetch_array($resultado);
+
+			// mostrar todos los registros 
+			while ( ($fila = mysqli_fetch_array($resultado) )  ) {
+		
 
 			// imprimir nombres
-			echo "<br>"."Nombre "."<strong>" .  $extraccion["nombre"] .  "</strong>" ."<br>";
-			echo "Apellido "."<strong>" .  $extraccion["apellido"] .  "</strong>" ."<br>";
+			echo "<br>"."Nombre "."<strong>" .  $fila["nombre"] .  "</strong>" ."<br>";
+			echo "Apellido "."<strong>" .  $fila["apellido"] .  "</strong>" ."<br>";
+		}
+
 
 
 	 ?>
