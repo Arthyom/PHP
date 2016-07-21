@@ -5,6 +5,7 @@
 </head>
 <body>
 	<form method="get" action="get1.php">
+	<h1>Area de nombres</h1>
 		<strong><label>Nombre</label></strong>
 		<input type="textbox" name="txtNombre"/>
 
@@ -25,8 +26,8 @@
 
 	<form method="get" action="get1.php"> 
 	<h1>Area de calculos</h1>
-		<input type="textbox" name="alto">
-		<input type="textbox" name="ancho">
+		<input type="textbox" name="txtAlto">
+		<input type="textbox" name="txtAncho">
 		<button type="submit">Calcular</button>
 	</form>
 </body>

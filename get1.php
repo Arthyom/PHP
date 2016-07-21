@@ -12,9 +12,10 @@
 
 		$alto   = $_GET["txtAlto"];
 		$ancho  = $_GET["txtAncho"];
+		$area = $alto *$ancho;
 
 		echo "<h1> Calcular area</h1>","<br/>";
-		echo "Area del rectangulo <strong> $alto * $ancho <strong/>";
+		echo "Area del rectangulo <strong> ($area) <strong/>";
 
 		echo "<h1> Mostrar nombres </h1>","<br/>";
 		echo "Su nombre es <strong>$nombre</strong>","<br/>";
