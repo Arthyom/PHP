@@ -4,7 +4,7 @@
 	<title>Nombre y Datos PHP</title>
 </head>
 <body>
-	<form>
+	<form method="get" action="get1.php">
 		<strong><label>Nombre</label></strong>
 		<input type="textbox" name="txtName"/>
 
