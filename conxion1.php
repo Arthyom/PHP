@@ -21,14 +21,39 @@
 			if ($resultado)
 				echo "consulta exitosa";
 
-			// posicionarse en una fila 
-			mysqli_data_seek($resultado,0);
-
-
-			// mostrar todos los registros 
+					// mostrar todos los registros 
 			while ( ($fila = mysqli_fetch_array($resultado) )  ) {
-		
+			// imprimir nombres
+			echo "<br>"."Nombre "."<strong>" .  $fila["nombre"] .  "</strong>" ."<br>";
+			echo "Apellido "."<strong>" .  $fila["apellido"] .  "</strong>" ."<br>";
+		}
 
+		/*
+			// intentar insertar una columna
+		 mysqli_query($cadConex, "INSERT INTO Cliete(apellido,nombre) VALUES('topis','ivan')" );
+
+		 $resultado2 = mysqli_query($cadConex,"select * from Cliete");
+			if ($resultado2)
+				echo "consulta exitosa";
+
+					// mostrar todos los registros 
+			while ( ($fila = mysqli_fetch_array($resultado2) )  ) {
+			// imprimir nombres
+			echo "<br>"."Nombre "."<strong>" .  $fila["nombre"] .  "</strong>" ."<br>";
+			echo "Apellido "."<strong>" .  $fila["apellido"] .  "</strong>" ."<br>";
+
+			
+		}*/
+
+		// eliminar algunos registros
+		mysqli_query($cadConex,"DELETE FROM Cliete where apellido = 'topis'");
+
+		$resultado2 = mysqli_query($cadConex,"select * from Cliete");
+			if ($resultado)
+				echo "consulta exitosa";
+
+					// mostrar todos los registros 
+			while ( ($fila = mysqli_fetch_array($resultado) )  ) {
 			// imprimir nombres
 			echo "<br>"."Nombre "."<strong>" .  $fila["nombre"] .  "</strong>" ."<br>";
 			echo "Apellido "."<strong>" .  $fila["apellido"] .  "</strong>" ."<br>";
