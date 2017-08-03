@@ -1,0 +1,4 @@
+este
+es un largo archivo 
+de texto con muchas lineas interesantes
+y tambien dice olism
