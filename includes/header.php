@@ -38,10 +38,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="Nosotros/nosotros.php">Nosotros</a></li>
-            <li><a href="">Contactos</a></li>
-            <li><a href="">Ventas</a></li>
-            <li><a href="">Ofertas</a></li>
+            <li><a href="nosotros.php">Nosotros</a></li>
+            <li><a href="contactos.php">Contactos</a></li>
+            <li><a href="ventas.php">Ventas</a></li>
+            <li><a href="ofertas.php">Ofertas</a></li>
           </ul>
           <form class="navbar-form navbar-right" role="form">
             <div class="form-group">

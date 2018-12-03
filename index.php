@@ -1,4 +1,4 @@
-<?php include("header/header.php"); ?>
+<?php include("includes/header.php"); ?>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
@@ -31,4 +31,4 @@
 
       <hr>
    
-<?php include("footer/footer.php"); ?>
+<?php include("includes/footer.php"); ?>
