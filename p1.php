@@ -1,0 +1,4 @@
+<?php
+ado
+    phpinfo();
+?>
