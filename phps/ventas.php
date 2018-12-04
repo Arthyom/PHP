@@ -1,6 +1,7 @@
+<?php $pagina = "ventas";?>
 <?php require_once("includes/header.php")?>
 
-<h1>Contactos</h1>
+<h1>Ventas</h1>
 
 
 <?php require_once("includes/footer.php")?>
