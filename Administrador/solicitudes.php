@@ -19,7 +19,7 @@
       </tr>
     </thead>
     <tbody>
-    <?php $i = 0; foreach ($solicit as $si):?>
+    <?php $i = 0; foreach ($solicitud as $si):?>
         <tr>
             <th scope="row"><?php echo ($i+=1)?></th>
             <td><?php echo $si['idUsuario']?></td>

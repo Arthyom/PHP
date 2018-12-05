@@ -9,14 +9,14 @@
   <div class="panel-body">
       <div class="row">
         <div class="col-md-7">
-          <img h src="../img/g.jpg" class="thumbnail" width="300" height="370">
+          <img h src="../img/g.jpg" class="thumbnail" wnameth="300" height="370">
         </div>
-<form action="" method="post" class="form-horizontal">
+<form action="insertMascota.php" method="get" class="form-horizontal">
       <div class="col-md-5">
           <div class="form-group ">
             <label  class="col-sm-2 control-label">Nombre</label>
             <div class="col-sm-10">
-            <input type="text" value="" class="form-control form-control-sm" id="nombre" 
+            <input type="text" value="" class="form-control form-control-sm" name="nombre" 
             placeholder="Nombre de la Mascota">
             </div>
           </div>
@@ -24,7 +24,7 @@
       <div class="form-group row">
         <label for="raza" class="col-sm-2 control-label">Raza</label>
         <div class="col-sm-10">
-        <input type="text" value="" class="form-control form-control-sm"  id="raza" 
+        <input type="text" value="" class="form-control form-control-sm"  name="raza" 
         placeholder="Raza de la Mascota">
         </div>
       </div>
@@ -32,7 +32,7 @@
       <div class="form-group row">
         <label for="edad" class="col-sm-2 control-label">Edad</label>
         <div class="col-sm-10">
-        <input type="text" value="" class="form-control form-control-sm"  id="edad" 
+        <input type="text" value="" class="form-control form-control-sm"  name="edad" 
         placeholder="Edad de la Mascota">
         </div>
       </div>
@@ -40,7 +40,7 @@
       <div class="form-group row">
         <label for="edad" class="col-sm-2 control-label">Color</label>
         <div class="col-sm-10">
-        <input type="text" value="" class="form-control form-control-sm"  id="edad"
+        <input type="text" value="" class="form-control form-control-sm"  name="color"
         placeholder="Edad de la Mascota">
         </div>
       </div>
@@ -49,20 +49,29 @@
         <label for="historia" class="col-sm-2 control-label">Historia</label>
         <div class="col-sm-10">
         <textarea value="" class="form-control form-control-sm"  
-        id="historia" placeholder="Edad de la Mascota"></textarea>
+        name="historia" placeholder="Edad de la Mascota"></textarea>
         </div>
       </div>
 
       <div class="form-group row">
         <label for="hclinico" class="col-sm-2 control-label">Historial Clinico</label>
         <div class="col-sm-10">
-        <textarea value="" class="form-control form-control-sm"  id="hclinico"
+        <textarea value="" class="form-control form-control-sm"  name="hclinico"
         placeholder="Historial Clinico de la Mascota"></textarea>
         </div>
       </div>
 
+      <div class="form-group row">
+        <label for="refugio" class="col-sm-2 control-label">Refugio</label>
+        <div class="col-sm-10">
+        <input type="text" value="" class="form-control form-control-sm"  
+        name="refugios_id"
+        placeholder="Edad de la Mascota">
+        </div>
+      </div>
+
       <div class="custom-file">
-  <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+  <input type="file" class="custom-file-input" name="customFileLang" lang="es">
   <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
 </div>
 
@@ -76,7 +85,9 @@
   
       <div class="row">
       <div class="col-md-6">
-        <input type="submit" value="Aceptar" class="btn btn-block btn-success">
+        
+          <input type="submit" value="Aceptar" class="btn btn-block btn-success">
+
       </div>
       <div class="col-md-6">
       <a href="index.php" class="btn btn-block btn-danger">Salir</a>

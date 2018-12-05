@@ -47,7 +47,7 @@
             <li class="<?php if($pagina == 'mascotas')echo 'active'?>"><a href="mascotas.php">Mascotas</a></li>
             <li class="<?php if($pagina == 'administradores')echo 'active'?>"><a href="administradores.php">Usuarios</a></li>
             <li class="<?php if($pagina == 'solicitudes')echo 'active'?>"><a href="solicitudes.php">
-            Solicitudes <span class="badge badge-danger"><?php echo(count($solicit))?></span></a></li>
+            Solicitudes <span class="badge badge-danger"><?php echo(count($solicitud))?></span></a></li>
           </ul>
 
         

@@ -18,11 +18,11 @@
       </tr>
     </thead>
     <tbody>
-    <?php $i = 0; foreach ($solicit as $si):?>
+    <?php $i = 0; foreach ($solicitud as $si):?>
         <tr>
             <th scope="row"><?php echo ($i+=1)?></th>
-            <td><?php echo $si['idUsuario']?></td>
-            <td><?php echo $si['idMascota']?></td>    
+            <td><?php echo $si['usuarios_id']?></td>
+            <td><?php echo $si['mascotas_id']?></td>    
             <td><?php if($si['aceptada']) echo 'Aceptada'; else echo 'Rechazada'; ?></td>
         </tr>
     <?php endforeach?>

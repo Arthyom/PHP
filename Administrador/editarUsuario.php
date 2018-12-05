@@ -1,33 +1,33 @@
 <?php include_once('../includes/cabeceraAdmin.php') ?>
-
-<?php include('../includes/data.php')?>
 <?php $id = $_GET['idUsuario']?>
 
 <div class="panel panel-primary"  align="center" style="padding:1.5%">
   
   <div class="panel-heading">
-    Revizar Mascota
-  </div>
+    Revizar Usuario</div>
 
   <div class="panel-body">
       <div class="row">
         <div class="col-md-7">
-          <img h src="../img/g.jpg" class="thumbnail" width="300" height="370">
+          <img h src="../img/g.jpg" class="thumbnail" wnameth="400" height="470">
         </div>
-<form action="" method="post" class="form-horizontal">
+<form action="updateUsuarios.php" method="get" class="form-horizontal">
       <div class="col-md-5">
           <div class="form-group ">
             <label  class="col-sm-2 control-label">Nombre</label>
             <div class="col-sm-10">
-            <input type="text" value="<?php echo($usuario[$id-1]['nombre'])?>" class="form-control form-control-sm" id="nombre" 
+            <input type="text" value="<?php echo($usuario[$id-1]['nombre'])?>" 
+            class="form-control form-control-sm" name="nombre" 
             placeholder="Nombre de la Mascota">
+            <input type="text" value="<?php echo($id)?>" name="idUsuario" hidden="true">
             </div>
           </div>
 
       <div class="form-group row">
         <label for="raza" class="col-sm-2 control-label">Contraseña</label>
         <div class="col-sm-10">
-        <input type="text" value="<?php echo($mascota[$id-1]['contra'])?>" class="form-control form-control-sm"  id="raza" 
+        <input type="text" value="<?php echo($usuario[$id-1]['contra'])?>" 
+        class="form-control form-control-sm"  name="contra" 
         placeholder="Raza de la Mascota">
         </div>
       </div>
@@ -35,14 +35,71 @@
       <div class="form-group row">
         <label for="edad" class="col-sm-2 control-label">Rol</label>
         <div class="col-sm-10">
-        <input type="text" value="<?php echo($mascota[$id-1]['rol'])?>" class="form-control form-control-sm"  id="edad" 
+        <input type="text" value="<?php echo($usuario[$id-1]['rol'])?>" 
+        class="form-control form-control-sm"  name="rol" 
+        placeholder="Edad de la Mascota">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="edad" class="col-sm-2 control-label">Direccion</label>
+        <div class="col-sm-10">
+        <input type="text" value="<?php echo($usuario[$id-1]['direccion'])?>" 
+        class="form-control form-control-sm"  name="direccion" 
+        placeholder="Edad de la Mascota">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="edad" class="col-sm-2 control-label">Telefono</label>
+        <div class="col-sm-10">
+        <input type="text" value="<?php echo($usuario[$id-1]['telefono'])?>" 
+        class="form-control form-control-sm"  name="telefono" 
+        placeholder="Edad de la Mascota">
+        </div>
+      </div>
+
+       <div class="form-group row">
+        <label for="edad" class="col-sm-2 control-label">Adoptados</label>
+        <div class="col-sm-10">
+        <input type="text" value="<?php echo($usuario[$id-1]['tMascotas'])?>"
+         class="form-control form-control-sm"  name="tMascotas" 
         placeholder="Edad de la Mascota">
         </div>
       </div>
 
 
+      <div class="form-group row">
+        <label for="edad" class="col-sm-2 control-label">Edad</label>
+        <div class="col-sm-10">
+        <input type="text" value="<?php echo($usuario[$id-1]['edad'])?>" 
+        class="form-control form-control-sm"  name="edad" 
+        placeholder="Edad de la Mascota">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="edad" class="col-sm-2 control-label">Peligrocidad</label>
+        <div class="col-sm-10">
+        <input type="text" value="<?php echo($usuario[$id-1]['peligrocidad'])?>" 
+        class="form-control form-control-sm"  name="peligrocidad" 
+        placeholder="Edad de la Mascota">
+        </div>
+      </div>
+
+
+       <div class="form-group row">
+        <label for="edad" class="col-sm-2 control-label">Obsevarcion</label>
+        <div class="col-sm-10">
+        <textarea type="text"  class="form-control form-control-sm"  name="observaciones" 
+        placeholder="Edad de la Mascota"><?php echo($usuario[$id-1]['observaciones'])?></textarea>
+        </div>
+      </div>
+
+
+
       <div class="custom-file">
-  <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+  <input type="file" class="custom-file-input" name="customFileLang" lang="es">
   <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
 </div>
 

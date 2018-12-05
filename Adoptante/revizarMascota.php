@@ -1,7 +1,6 @@
 <?php $pagina = 'mascotas' ?>
 <?php include_once('../includes/cabeceraAdoptante.php') ?>
 
-<?php include('../includes/data.php')?>
 <?php $id = $_GET['idMascota']?>
 
 <div class="panel panel-primary"  align="center" style="padding:1.5%">
@@ -20,7 +19,7 @@
         <span class="label label-default">Raza</span>   <label><?php echo($mascota[$id-1]['raza'])?></label><br/>
         <span class="label label-default">Color</span>  <label><?php echo($mascota[$id-1]['color'])?></label><br/>
         <span class="label label-default">Historia</span> <label><?php echo($mascota[$id-1]['historia'])?></label><br/>
-        <span class="label label-default">Historial Clinico</span> <label><?php echo($mascota[$id-1]['hclinico'])?></label><br/>
+        <span class="label label-default">Historial Clinico</span> <label><?php echo($mascota[$id-1]['hMedico'])?></label><br/>
     </div>
   </div>
 

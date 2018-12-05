@@ -6,7 +6,7 @@ INSERT INTO `petsJungle`.`refugios` (`nombre`, `direccion`, `telefono`, `horario
 INSERT INTO `petsJungle`.`refugios` (`nombre`, `direccion`, `telefono`, `horario`, `masctoas`) VALUES ('ya no sé', 'sn', 'nt', 'todo el dia', '200');
 
 
-INSERT INTO `petsJungle`.`usuarios` (`contra`, `nombre`, `tMascotas`, `peligrocidad`, `telefono`, `direccion`, `edad`, `observaciones`, `rol`) VALUES ('1234', 'admin1', '0', '0', '0', '0', '0', '0', 'admin');
+INSERT INTO `petsJungle`.`usuarios` (`contra`, `nombre`, `tMascotas`, `peligrocidad`, `telefono`, `direccion`, `edad`, `observaciones`, `rol`) VALUES ('123s4', 'admins1', '0', '0', '0', '0', '0', '0', 'admin');
 INSERT INTO `petsJungle`.`usuarios` (`contra`, `nombre`, `tMascotas`, `peligrocidad`, `telefono`, `direccion`, `edad`, `observaciones`, `rol`) VALUES ('5678', 'user1', '2', 'nula', '44573435', 'juares #27', '12', 'ninguna', 'user');
 
 INSERT INTO `petsJungle`.`mascotas` (`nombre`, `color`, `edad`, `historia`, `hMedico`, `imagen`, `adoptado`, `refugios_id`) VALUES ('perro1', 'rojo', '34', 'ninguna', 'ninguna', 'ninguna', '0', '1');

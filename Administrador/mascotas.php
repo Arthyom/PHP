@@ -13,27 +13,31 @@
       <tr>
           <th scope="col">#</th>
           <th scope="col">Raza</th>
+          <th scope="col">Raza</th>
           <th scope="col">Edad</th>
           <th scope="col">Color</th>
-          <th scope="col">Historial Clinico</th>
+          <th scope="col">Estado</th>
           <th scope="col">Opciones</th>
       </tr>
     </thead>
     <tbody>
     <?php $i = 0; foreach ($mascota as $mi):?>
-        <?php if(!$mi['adoptado']):?>
+        <?php if(true):?>
         <tr>
             <th scope="row"><?php echo ($i+=1)?></th>
+            <td><?php echo $mi['nombre']?></td>
             <td><?php echo $mi['raza']?></td>
             <td><?php echo $mi['edad']?></td>
-            <td><?php echo $mi['color']?></td>
-            <td><?php echo $mi['hclinico']?></td>       
+            <td><?php echo $mi['color']?></td> 
+            <td><?php if($mi['adoptado'])
+             echo 'Adoptado/Espera'; else echo 'Libre'; ?></td>     
             <td>
             <a class="btn btn-primary" 
-            href="editarMascota.php?idMascota=<?php echo($i)?>">Editar</a>
+            href="editarMascota.php?idMascota=<?php echo($mi['id'])?>">Editar</a>
             </td>
             
-            <td><a class="btn btn-danger" href="">Eliminar</a></td>
+            <td><a class="btn btn-danger" 
+            href="borrarMascota.php?idMascota=<?php echo($mi['id'])?>">Eliminar</a></td>
         </tr>
         <?php endif?>
     <?php endforeach?>

@@ -11,6 +11,7 @@
   <thead class="thead-light">
       <tr>
           <th scope="col">#</th>
+          <th scope="col">Nombre</th>
           <th scope="col">Ubicacion</th>
           <th scope="col">Telefono</th>
           <th scope="col">Horarios</th>
@@ -21,19 +22,17 @@
     <?php $i = 0; foreach ($refugio as $ri):?>
         <tr>
             <th scope="row"><?php echo ($i+=1)?></th>
-            <td><?php echo $ri['ubicacion']?></td>
+            <td><?php echo $ri['nombre']?></td>
+            <td><?php echo $ri['direccion']?></td>
             <td><?php echo $ri['telefono']?></td>
-            <td><?php echo $ri['horarios']?></td>   
-            <td><?php echo $ri['mascotas']?></td>    
+            <td><?php echo $ri['horario']?></td>   
+            <td><?php echo $ri['masctoas']?></td>    
             <td>
             <a class="btn btn-primary" 
-            href="editarRefugio.php?idRefugio=<?php echo($i)?>">Editar</a>
+            href="editarRefugio.php?idRefugio=<?php echo($ri['id'])?>">Editar</a>
             </td>
-            <td>
-            <form action="" method="post">
-            <input type="submit" value="Eliminar" class="btn btn-danger">
-            </form>
-            </td>
+            <td><a class="btn btn-danger" 
+            href="borrarRefugio.php?idRefugio=<?php echo($ri['id'])?>">Eliminar</a></td>
         </tr>
     <?php endforeach?>
     </tbody>

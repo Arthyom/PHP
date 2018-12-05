@@ -1,114 +1,69 @@
 <?php
-//raza, edad, historia, color, historial clínico
-//ubicación, teléfono, horarios
 
-$mascota = array();
-$admin   = array();
-$solicit = array();
-$refugio = array();
+try {
+    // funciones basicas, selects completos de las tablas 
+    function todoMascotas($pdoCon)
+    {
+        $tM = $pdoCon->prepare('SELECT * FROM mascotas');
+        $tM->execute();
+        $resultado = $tM->fetchAll();
 
-$mascota[] = array(
- 'raza'=>'ratonero',
- 'edad'=>5,
- 'color'=>'deslavado',
- 'hclinico'=>'tiene moquillo',
- 'adoptado'=>false,
- 'historia'=>'deslavado',
-    'nombre'=>'deslavado',
-);
+        return $resultado;
+    }
 
-$mascota[] = array(
-    'raza'=>'ratonero',
-    'edad'=>5,
-    'color'=>'deslavado',
-    'hclinico'=>'tiene moquillo',
-    'adoptado'=>false,
-    'historia'=>'deslavado',
-    'nombre'=>'deslavado',
-   );
+    function todoRefugios($pdoCon)
+    {
+        $tr = $pdoCon->prepare('SELECT * FROM refugios');
+        $tr->execute();
+        $resultado = $tr->fetchAll();
 
-$mascota[] = array(
-    
-    'raza'=>'ratonero',
-    'edad'=>5,
-    'color'=>'deslavado',
-    'historia'=>'deslavado',
-    'nombre'=>'deslavado',
-    'hclinico'=>'tiene moquillo',
-    'adoptado'=>false
-   );
-   
+        return $resultado;
+    }
 
-$usuario[] = array(
-    'rol'=>'admin',
-    'nombre'=>'admin1',
-    'contra'=>'1234'
-);
+    function todoUsuarios($pdoCon)
+    {
+        $tu = $pdoCon->prepare('SELECT * FROM usuarios');
+        $tu->execute();
+        $resultado = $tu->fetchAll();
 
-$usuario[] = array(
-    'rol'=>'user',
-    'nombre'=>'user1',
-    'contra'=>'0000',
-    'tMascotas'=>4,
-    'ingresoMensual'=>150.0,
-    'estatus'=>'bueno',
-    'observaciones'=>'le pego a un perro',
-    'estatus'=>'bueno',
-    'telefono'=>'',
-    'direccion'=>'',
-    'edad'=>15
-);
+        return $resultado;
+    }
 
-$usuario[] = array(
-    'rol'=>'user',
-    'nombre'=>'user1',
-    'contra'=>'0000',
-    'tMascotas'=>4,
-    'ingresoMensual'=>150.0,
-    'estatus'=>'bueno',
-    'observaciones'=>'le pego a un perro',
-    'estatus'=>'bueno',
-    'telefono'=>'',
-    'direccion'=>'',
-    'edad'=>15
-);
+    function todoSolicitudes($pdoCon)
+    {
+        $ts = $pdoCon->prepare('SELECT * FROM solicitudes');
+        $ts->execute();
+        $resultado = $ts->fetchAll();
 
-$solicit[] = array(
-    'idUsuario' =>1,
-    'idMascota' =>1,
-    'aceptada'  =>false
-);
+        return $resultado;
+    }
 
-$solicit[] = array(
-    'idUsuario' =>1,
-    'idMascota' =>1,
-    'aceptada'  =>true
-);
+    function todoPropietarios($pdoCon)
+    {
+        $tp = $pdoCon->prepare('SELECT * FROM propietarios');
+        $tp->execute();
+        $resultado = $tp->fetchAll();
 
-$solicit[] = array(
-    'idUsuario' =>1,
-    'idMascota' =>1,
-    'aceptada'  =>true
-);
+        return $resultado;
+    }
+  
 
-$refugio[] = array(
-    'ubicacion'=>'Calle benito juarez #27 de moroleon',
-    'telefono'=>'445 734 34 156',
-    'horarios'=>'10:00 a.m. - 08:00 p.m.',
-    'mascotas'=>4
-);
+    $pdoCon = new PDO (
+        'mysql:host=localhost;dbname=petsJungle',
+        'frodo',
+        ''
+    );
 
-$refugio[] = array(
-    'ubicacion'=>'Calle benito juarez #27 de moroleon',
-    'telefono'=>'445 734 34 156',
-    'horarios'=>'10:00 a.m. - 08:00 p.m.',
-    'mascotas'=>4
+    // llamar a las funciones para cargar arrays de distribucion
+    $mascota = todoMascotas($pdoCon);
+    $refugio = todoRefugios($pdoCon);
+    $usuario = todoUsuarios($pdoCon);
+    $solicitud = todoSolicitudes($pdoCon);
+    $propietario = todoPropietarios($pdoCon);
 
-);
 
-$refugio[] = array(
-    'ubicacion'=>'Calle benito juarez #27 de moroleon',
-    'telefono'=>'445 734 34 156',
-    'horarios'=>'10:00 a.m. - 08:00 p.m.',
-    'mascotas'=>4
-);
+} catch (\Throwable $th) {
+    echo 'no se puede conectar con la base de datos';
+}
+
+?>
