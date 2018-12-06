@@ -29,7 +29,7 @@ try {
         if($tp ==1)
             header('Location: administradores.php');
         else
-            echo 'no se puede borrar';
+            header('Location: errorAdministradores.php');
         
     }
     

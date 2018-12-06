@@ -1,6 +1,6 @@
 <?php $pagina = 'solicitudes' ?>
 <?php include_once('../includes/cabeceraAdoptante.php') ?>
-
+<?php $pdoConExt = getPDOCON() ?>
 
 <div class="panel panel-primary"  align="center" style="padding:1.5%">
    <div class="panel-heading">
@@ -21,9 +21,9 @@
     <?php $i = 0; foreach ($solicitud as $si):?>
         <tr>
             <th scope="row"><?php echo ($i+=1)?></th>
-            <td><?php echo $si['usuarios_id']?></td>
-            <td><?php echo $si['mascotas_id']?></td>    
-            <td><?php if($si['aceptada']) echo 'Aceptada'; else echo 'Rechazada'; ?></td>
+            <td><?php echo refugioById($pdoConExt, $si['refugios_id'])?></td>
+            <td><?php echo mascotaById($pdoConExt, $si['mascotas_id'])?></td>    
+            <td><?php if(!$si['estado']) echo 'Rechazada'; else echo 'Aceptado'; ?></td>
         </tr>
     <?php endforeach?>
     </tbody>

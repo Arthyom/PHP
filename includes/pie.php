@@ -1,5 +1,5 @@
-<footer>
-        <p>&copy; Company 2015</p>
+    <footer align='center'>
+        <p><b>&copy; petsJungle 2018</b></p>
       </footer>
     </div>   
 

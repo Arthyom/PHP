@@ -1,6 +1,6 @@
 <?php $pagina = 'mascotas' ?>
 <?php include('../includes/cabeceraAdmin.php')?>
-
+<?php $pdoConExt = getPDOCON() ?>
 
 <div class="panel panel-primary"  align="center" style="padding:1.5%">
    <div class="panel-heading">
@@ -16,6 +16,8 @@
           <th scope="col">Raza</th>
           <th scope="col">Edad</th>
           <th scope="col">Color</th>
+          
+          <th scope="col">Refugio</th>
           <th scope="col">Estado</th>
           <th scope="col">Opciones</th>
       </tr>
@@ -29,11 +31,12 @@
             <td><?php echo $mi['raza']?></td>
             <td><?php echo $mi['edad']?></td>
             <td><?php echo $mi['color']?></td> 
+            <td><?php echo refugioById($pdoConExt, $mi['refugios_id'])?></td>
             <td><?php if($mi['adoptado'])
              echo 'Adoptado/Espera'; else echo 'Libre'; ?></td>     
             <td>
             <a class="btn btn-primary" 
-            href="editarMascota.php?idMascota=<?php echo($mi['id'])?>">Editar</a>
+            href="editarMascota.php?idMascota=<?php echo$i?>">Editar</a>
             </td>
             
             <td><a class="btn btn-danger" 

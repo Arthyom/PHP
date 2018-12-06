@@ -8,24 +8,27 @@ try {
     
 
     function update($pdoCon){
-        $id = $_GET['idMascota'];
-        $nombre = $_GET['nombre'];
-        $color = $_GET['color'];
-        $edad = $_GET['edad'];
-        $historia = $_GET['historia'];
-        $hMedico = $_GET['hMedico'];
-        $imagen = $_GET['imagen'];
-        $rId = $_GET['refugios_id'];
-        $raza = $_GET['raza'];
-        $estado = false;
+        $id = $_POST['idMascotaDB'];
+        $nombre = $_POST['nombre'];
+        $color = $_POST['color'];
+        $edad = $_POST['edad'];
+        $historia = $_POST['historia'];
+        $hMedico = $_POST['hMedico'];
+        $imagen = $_POST['imagen'];
+        $rId = $_POST['refugios_id'];
+        $raza = $_POST['raza'];
+
+        $date = new DateTime();
+        $ruta = '../images/'. $date->format('YmdHis').'.jpeg';
+       move_uploaded_file($_FILES["mascotaImagen"]["tmp_name"],$ruta);
+       
+
 
         $con = "UPDATE mascotas 
         SET nombre='$nombre', raza='$raza', color='$color', edad=$edad,
         historia='$historia', hMedico='$hMedico', 
-        imagen='$imagen', adoptado=0, refugios_id=$rId WHERE id = $id";
+        imagen='$ruta', refugios_id=$rId WHERE id = $id";
 
-        "VALUES ('$nombre', '$raza','$color' , $edad, '$historia', '$hMedico', 
-        '$imagen',$estado , '1')";
 
         echo(var_dump($con));
 
@@ -33,8 +36,8 @@ try {
         echo var_dump($tp);
         if($tp ==1)
             header('Location: mascotas.php');
-        else
-            echo 'no se puede borrar';
+        //else
+            //header('Location: errorMascotas.php');
         
     }
     

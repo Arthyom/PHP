@@ -3,7 +3,7 @@
 try {
     include('../includes/data.php');
     function insertar($pdoCon){
-        $id = $_GET['idRefugio'];
+        $id = $_GET['idRefugioDB'];
         $nom = $_GET['nombre'];
         $dir = $_GET['direccion'];
         $tel = $_GET['telefono'];
@@ -24,7 +24,7 @@ try {
         if($tp ==1)
             header('Location: refugios.php');
         else
-            echo 'no se puede borrar';
+            header('Location: errorRefugios.php');
         
     }
     

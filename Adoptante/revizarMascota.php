@@ -10,7 +10,9 @@
   <div class="panel-body">
   <div class="row">
     <div class="col-md-8">
-        <img h src="../img/g.jpg" class="thumbnail" width="300" height="370">
+    <img  src="<?php if($mascota[$id-1]['imagen']!=null)
+          echo($mascota[$id-1]['imagen']);else echo '../images/perro.jpg';?>" 
+          class="thumbnail" wnameth="300" height="370">
     </div>
 
     <div class="col-md-4">
@@ -24,10 +26,7 @@
   </div>
 
     <div class="row">
-    <div class="col-md-6">
-        <a href="" class="btn btn-block btn-success">Adoptar</a>
-     </div>
-     <div class="col-md-6">
+     <div class="col-md-12">
      <a href="index.php" class="btn btn-block btn-danger">Salir</a>
      </div>
      </div>

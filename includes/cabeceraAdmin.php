@@ -1,5 +1,10 @@
 <?php include('../includes/data.php')?>
-
+<?php 
+  $libres = 0;
+  foreach ($solicitud as $sol) 
+    if(!$sol['estado'])
+      $libres++;
+?>
 
 
 <!doctype html>
@@ -47,11 +52,11 @@
             <li class="<?php if($pagina == 'mascotas')echo 'active'?>"><a href="mascotas.php">Mascotas</a></li>
             <li class="<?php if($pagina == 'administradores')echo 'active'?>"><a href="administradores.php">Usuarios</a></li>
             <li class="<?php if($pagina == 'solicitudes')echo 'active'?>"><a href="solicitudes.php">
-            Solicitudes <span class="badge badge-danger"><?php echo(count($solicitud))?></span></a></li>
+            Solicitudes <span class="badge badge-danger"><?php echo $libres?></span></a></li>
           </ul>
 
         
-          <form class="navbar-form navbar-right" role="form">
+          <form action='../logout.php' method='post' class="navbar-form navbar-right" role="form">
             <button type="submit" class="btn btn-success">Cerrar Secion</button>
           </form>
         </div><!--/.navbar-collapse -->

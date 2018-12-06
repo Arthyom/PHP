@@ -47,14 +47,55 @@ try {
         return $resultado;
     }
   
+    function refugioById($pdoCon,$id)
+    {
+        $tp = $pdoCon->prepare("SELECT * FROM refugios WHERE id = $id");
+        $tp->execute();
+        $resultado = $tp->fetch();
 
-    $pdoCon = new PDO (
-        'mysql:host=localhost;dbname=petsJungle',
-        'frodo',
-        ''
-    );
+        return $resultado['nombre'];
+    }
+
+    function usuarioById($pdoCon,$id)
+    {
+        $tp = $pdoCon->prepare("SELECT * FROM usuarios WHERE id = $id");
+        $tp->execute();
+        $resultado = $tp->fetch();
+
+        return $resultado['nombre'];
+    }
+
+    function usuarioArrayById($pdoCon,$id)
+    {
+        $tp = $pdoCon->prepare("SELECT * FROM usuarios WHERE id = $id");
+        $tp->execute();
+        $resultado = $tp->fetch();
+
+        return $resultado;
+    }
+
+    function mascotaById($pdoCon,$id)
+    {
+        $tp = $pdoCon->prepare("SELECT * FROM mascotas WHERE id = $id");
+        $tp->execute();
+        $resultado = $tp->fetch();
+
+        return $resultado['nombre'];
+    }
+
+    function getPDOCON (){
+        $pdoCon = new PDO (
+            'mysql:host=localhost;dbname=petsJungle',
+            'frodo',
+            ''
+        );
+        return $pdoCon;
+    }
+
+
 
     // llamar a las funciones para cargar arrays de distribucion
+    $pdoCon = getPDOCON();
     $mascota = todoMascotas($pdoCon);
     $refugio = todoRefugios($pdoCon);
     $usuario = todoUsuarios($pdoCon);

@@ -9,14 +9,17 @@
   <div class="panel-body">
       <div class="row">
         <div class="col-md-7">
-          <img h src="../img/g.jpg" class="thumbnail" wnameth="300" height="370">
+          <img  src="../images/perro.jpg" class="thumbnail" 
+          width="400" height="410">
         </div>
-<form action="insertMascota.php" method="get" class="form-horizontal">
+<form name="mascotaImagen" action="insertMascota.php" method="post" 
+enctype="multipart/form-data"
+class="form-horizontal">
       <div class="col-md-5">
           <div class="form-group ">
             <label  class="col-sm-2 control-label">Nombre</label>
             <div class="col-sm-10">
-            <input type="text" value="" class="form-control form-control-sm" name="nombre" 
+            <input  type="text" value="" class="form-control form-control-sm" name="nombre" 
             placeholder="Nombre de la Mascota">
             </div>
           </div>
@@ -40,7 +43,7 @@
       <div class="form-group row">
         <label for="edad" class="col-sm-2 control-label">Color</label>
         <div class="col-sm-10">
-        <input type="text" value="" class="form-control form-control-sm"  name="color"
+        <input type="text" required value="" class="form-control form-control-sm"  name="color"
         placeholder="Edad de la Mascota">
         </div>
       </div>
@@ -64,18 +67,21 @@
       <div class="form-group row">
         <label for="refugio" class="col-sm-2 control-label">Refugio</label>
         <div class="col-sm-10">
-        <input type="text" value="" class="form-control form-control-sm"  
-        name="refugios_id"
-        placeholder="Edad de la Mascota">
+        <select required class="form-control form-control-sm" name="refugios_id">
+          <?php foreach($refugio as $ri):?>
+          <option value="<?php echo $ri['id']?>">
+            <?php echo $ri['nombre']?>
+          </option>
+          <?php endforeach?>
+        </select>
         </div>
       </div>
 
       <div class="custom-file">
-  <input type="file" class="custom-file-input" name="customFileLang" lang="es">
-  <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+  <input type="file" class="custom-file-input" name="mascotaImagen" />
 </div>
 
-     
+     <br/>
  
     
 
@@ -86,7 +92,8 @@
       <div class="row">
       <div class="col-md-6">
         
-          <input type="submit" value="Aceptar" class="btn btn-block btn-success">
+          <input type="submit" value="Aceptar" 
+          class="btn btn-block btn-success">
 
       </div>
       <div class="col-md-6">

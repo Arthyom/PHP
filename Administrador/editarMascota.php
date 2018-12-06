@@ -1,10 +1,10 @@
 <?php $pagina = 'mascotas' ?>
 <?php include_once('../includes/cabeceraAdmin.php') ?>
 
-<?php $id = $_GET['idMascota']?>
+<?php $id =  $_GET['idMascota']?>
 
 <div class="panel panel-primary"  align="center" style="padding:1.5%">
-  
+
   <div class="panel-heading">
     Revizar Mascota
   </div>
@@ -12,16 +12,20 @@
   <div class="panel-body">
       <div class="row">
         <div class="col-md-7">
-          <img h src="../img/g.jpg" class="thumbnail" wnameth="300" height="370">
+          <img  src="<?php if($mascota[$id-1]['imagen']!=null)
+          echo($mascota[$id-1]['imagen']);else echo '../images/perro.jpg';?>" 
+          class="thumbnail" wnameth="300" height="370">
         </div>
-<form action="updateMascotas.php" method="get" class="form-horizontal">
+<form action="updateMascotas.php" method="post" 
+enctype="multipart/form-data" class="form-horizontal">
       <div class="col-md-5">
           <div class="form-group ">
             <label  class="col-sm-2 control-label">Nombre</label>
             <div class="col-sm-10">
-            <input type="text" value="<?php echo($mascota[$id-1]['nombre'])?>" class="form-control form-control-sm" name="nombre" 
+            <input  type="text" value="<?php echo($mascota[$id-1]['nombre'])?>" class="form-control form-control-sm" name="nombre" 
             placeholder="Nombre de la Mascota">
-            <input type="text" value="<?php echo($id)?>" hidden="true"  name="idMascota">
+            <input type="hidden" value="<?php echo $mascota[$id-1]['id']?>"  
+            name="idMascotaDB">
             </div>
           </div>
 
@@ -45,7 +49,7 @@
       <div class="form-group row">
         <label for="edad" class="col-sm-2 control-label">Color</label>
         <div class="col-sm-10">
-        <input type="text" value="<?php echo($mascota[$id-1]['color'])?>" 
+        <input required type="text" value="<?php echo($mascota[$id-1]['color'])?>" 
         class="form-control form-control-sm"  name="color"
         placeholder="Edad de la Mascota">
         </div>
@@ -71,17 +75,21 @@
        <div class="form-group row">
         <label for="refugio" class="col-sm-2 control-label">Refugio</label>
         <div class="col-sm-10">
-        <input type="text" value="<?php echo($mascota[$id-1]['refugios_id'])?>" class="form-control form-control-sm"  
-        name="refugios_id"
-        placeholder="Edad de la Mascota">
+        <select class="form-control form-control-sm" name="refugios_id">
+          <?php foreach($refugio as $ri):?>
+          <option value="<?php echo $ri['id']?>">
+            <?php echo $ri['nombre']?>
+          </option>
+          <?php endforeach?>
+        </select>
         </div>
       </div>
 
-      <div class="custom-file">
-  <input type="file" class="custom-file-input" name="customFileLang" lang="es">
-  <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+       <div class="custom-file">
+  <input type="file" class="custom-file-input" name="mascotaImagen" />
 </div>
 
+<br/>
      
  
     
@@ -92,10 +100,11 @@
   
       <div class="row">
       <div class="col-md-6">
-        <input type="submit" value="Aceptar" class="btn btn-block btn-success">
+        <input type="submit" value="Editar" 
+        class="btn btn-block btn-success">
       </div>
       <div class="col-md-6">
-        <a href="index.php" class="btn btn-block btn-danger">Salir</a>
+        <a href="index.php" class="btn btn-block btn-danger">Cancelar</a>
       </div>
       </form>
       </div>

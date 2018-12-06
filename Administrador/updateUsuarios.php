@@ -8,7 +8,7 @@ try {
     
 
     function actualizar($pdoCon){
-        $id =  $_GET['idUsuario'];
+        $id  =  $_GET['idUsuarioDB'];
         $nom = $_GET['nombre'];
         $cnt = $_GET['contra'];
         $tms = $_GET['tMascotas'];
@@ -30,7 +30,7 @@ try {
         if($tp ==1)
             header('Location: administradores.php');
         else
-            echo 'no se puede borrar';
+            header('Location: errorAdministradores.php');
         
     }
     

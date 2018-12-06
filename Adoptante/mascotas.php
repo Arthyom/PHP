@@ -1,6 +1,6 @@
 <?php $pagina = 'mascotas' ?>
 <?php include_once('../includes/cabeceraAdoptante.php') ?>
-
+<?php $pdoConExt = getPDOCON() ?>
 
 <div class="panel panel-primary"  align="center" style="padding:1.5%">
    <div class="panel-heading">
@@ -16,6 +16,7 @@
           <th scope="col">Raza</th>
           <th scope="col">Edad</th>
           <th scope="col">Color</th>
+          <th scope="col">Refugio</th>
           <th scope="col">Opciones</th>
       </tr>
     </thead>
@@ -23,18 +24,20 @@
     <?php $i = 0; foreach ($mascota as $mi):?>
         <?php if(!$mi['adoptado']):?>
         <tr>
-            <th scope="row"><?php echo ($i+=1)?></th>
+            <th scope="row"><?php echo ($i++)?></th>
             <td><?php echo $mi['nombre']?></td>
             <td><?php echo $mi['raza']?></td>
             <td><?php echo $mi['edad']?></td>
-            <td><?php echo $mi['color']?></td>     
+            <td><?php echo $mi['color']?></td>   
+            <td><?php echo refugioById($pdoConExt, $mi['refugios_id'])?></td>
             <td><a class="btn btn-success" 
-            href="insertSolicitud.php?idMascota=<?php echo($mi['id'])?>">
+            href="insertSolicitud.php?idMascota=<?php
+             echo($mi['id'])?>&idRefugio=<?php echo($mi['refugios_id'])?>">
             Adoptar</a></td>
             
             <td>
             <a class="btn btn-primary" 
-            href="revizarMascota.php?idMascota=<?php echo($mi['id'])?>">
+            href="revizarMascota.php?idMascota=<?php echo $i?>">
             Revizar</a></td>
         </tr>
         <?php endif?>

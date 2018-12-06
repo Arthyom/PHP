@@ -9,34 +9,36 @@
   <div class="panel-body">
       <div class="row">
         <div class="col-md-7">
-          <img h src="../img/g.jpg" class="thumbnail" wnameth="400" height="470">
+          <img src="../images/usuarios.jpg" class="thumbnail" 
+          width="700" height="440">
         </div>
 <form action="insertUsuario.php" method="get" class="form-horizontal">
       <div class="col-md-5">
           <div class="form-group ">
             <label  class="col-sm-2 control-label">Nombre</label>
             <div class="col-sm-10">
-            <input type="text" value="" class="form-control form-control-sm" 
+            <input required type="text" value="" class="form-control form-control-sm" 
             name="nombre" 
-            placeholder="Nombre de la Mascota">
+            placeholder="Nombre del Usuario">
             </div>
           </div>
 
       <div class="form-group row">
         <label for="raza" class="col-sm-2 control-label">Contraseña</label>
         <div class="col-sm-10">
-        <input type="text" value="" class="form-control form-control-sm"
+        <input required type="text" value="" class="form-control form-control-sm"
           name="contra" 
-        placeholder="Raza de la Mascota">
+        placeholder="Raza del Usuario">
         </div>
       </div>
 
       <div class="form-group row">
         <label for="edad" class="col-sm-2 control-label">Rol</label>
         <div class="col-sm-10">
-        <input type="text" value="" class="form-control form-control-sm"  
-        name="rol" 
-        placeholder="Edad de la Mascota">
+        <select required name="rol" class="form-control form-control-sm" >
+          <option value="admin">Administrador</option>
+          <option value="user">Usuario</option>
+        </select>
         </div>
       </div>
 
@@ -55,16 +57,16 @@
         <div class="col-sm-10">
         <input type="text"  
         class="form-control form-control-sm"  name="telefono" 
-        placeholder="Edad de la Mascota">
+        placeholder="Edad del Usuario">
         </div>
       </div>
 
        <div class="form-group row">
         <label for="edad" class="col-sm-2 control-label">Adoptados</label>
         <div class="col-sm-10">
-        <input type="text" 
+        <input required type="text" 
          class="form-control form-control-sm"  name="tMascotas" 
-        placeholder="Edad de la Mascota">
+        placeholder="Edad del Usuario">
         </div>
       </div>
 
@@ -74,16 +76,21 @@
         <div class="col-sm-10">
         <input type="text"  
         class="form-control form-control-sm"  name="edad" 
-        placeholder="Edad de la Mascota">
+        placeholder="Edad del Usuario">
         </div>
       </div>
 
       <div class="form-group row">
         <label for="edad" class="col-sm-2 control-label">Peligro</label>
         <div class="col-sm-10">
-        <input type="text"  
-        class="form-control form-control-sm"  name="peligrocidad" 
-        placeholder="Edad de la Mascota">
+        <select required name="peligrocidad" class="form-control form-control-sm" >
+          <option value="nula">Nula</option>
+          <option value="poca">Poca</option>
+          <option value="media">Media</option>
+          <option value="elevada">Elevada</option>
+          <option value="extrema">Extrema</option>
+          <option value="desconocida">Desconocida</option>
+        </select>
         </div>
       </div>
 
@@ -92,22 +99,10 @@
         <label for="edad" class="col-sm-2 control-label">Obsevarcion</label>
         <div class="col-sm-10">
         <textarea type="text"  class="form-control form-control-sm"  name="observaciones" 
-        placeholder="Edad de la Mascota"></textarea>
+        placeholder="Edad del Usuario"></textarea>
         </div>
       </div>
-
-
-
-      <div class="custom-file">
-  <input type="file" class="custom-file-input" name="customFileLang" lang="es">
-  <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
-</div>
-
-     
- 
-    
-
-
+  
       </div>
       </div>
   

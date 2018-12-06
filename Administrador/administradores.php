@@ -27,7 +27,7 @@
             <td><?php echo $si['rol']?></td>    
             <td>
             <a class="btn btn-primary" 
-            href="editarUsuario.php?idUsuario=<?php echo($si['id'])?>">Editar</a>
+            href="editarUsuario.php?idUsuario=<?php echo$i?>">Editar</a>
             </td>
             <td><a class="btn btn-danger" 
             href="borrarUsuario.php?idUsuario=<?php echo($si['id'])?>">Eliminar</a></td>

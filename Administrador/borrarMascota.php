@@ -11,7 +11,7 @@ try {
         if($tp ==1)
             header('Location: mascotas.php');
         else
-            echo 'no se puede borrar';
+            header('Location: errorMascotas.php');
     }
     borrar($pdoCon,$id);
 

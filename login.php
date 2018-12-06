@@ -15,18 +15,23 @@ try {
         echo(var_dump($re));
 
         if( $re['rol'] == 'admin'){
-            /// insertar sesion de admin
+            session_start();
+            $_SESSION['admin']= array( 'id'=>$re['id'], 
+            'nombre' => $re['nombre']);
             header('Location: Administrador/index.php');
         }
         else{
         if( $re['rol'] == 'user'){
-            /// insertar sesion de user
+            session_start();
+            $_SESSION['user']= array( 'id'=>$re['id'], 
+            'nombre' => $re['nombre']);
             header('Location: Adoptante/index.php');
         }
             else
-            header('Location: index.php');
+            header('Location: indexError.php');
         }
         
+        var_dump($_SESSION);
     }
     
     registrar($pdoCon);

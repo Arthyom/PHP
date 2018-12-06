@@ -22,7 +22,7 @@ try {
         if($tp ==1)
             header('Location: refugios.php');
         else
-            echo 'no se puede borrar';
+            header('Location: errorRefugios.php');
         
     }
     

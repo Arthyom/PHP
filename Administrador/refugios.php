@@ -29,7 +29,7 @@
             <td><?php echo $ri['masctoas']?></td>    
             <td>
             <a class="btn btn-primary" 
-            href="editarRefugio.php?idRefugio=<?php echo($ri['id'])?>">Editar</a>
+            href="editarRefugio.php?idRefugio=<?php echo$i?>">Editar</a>
             </td>
             <td><a class="btn btn-danger" 
             href="borrarRefugio.php?idRefugio=<?php echo($ri['id'])?>">Eliminar</a></td>

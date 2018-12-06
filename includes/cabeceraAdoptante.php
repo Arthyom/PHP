@@ -1,5 +1,16 @@
 <?php include('../includes/data.php')?>
-
+<?php 
+  $aceptados = 0;
+  foreach ($solicitud as $sol) 
+    if($sol['estado'])
+      $aceptados++;
+  
+  $libres = 0;
+    foreach ($mascota as $mas) 
+      if(!$mas['adoptado'])
+        $libres++;
+  
+?>
 
 <!doctype html>
 <html class="no-js" lang="">
@@ -43,13 +54,21 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-            <li class="<?php if($pagina == 'solicitudes')echo 'active'?>"><a href="solicitudes.php">Respuestas de Adopcion</a></li>
-            <li class="<?php if($pagina == 'mascotas')echo 'active'?>"><a href="mascotas.php">Mascotas</a></li>
+            <li class="<?php if($pagina == 'solicitudes')echo 'active'?>">
+            <a href="solicitudes.php">
+            Respuestas de Adopcion 
+            <span class="badge badge-danger"><?php echo $aceptados ?></span>
+            </a></li>
+            <li class="<?php if($pagina == 'mascotas')echo 'active'?>"
+            ><a href="mascotas.php">
+            Mascotas
+            <span class="badge badge-danger"><?php echo $libres?></span>
+            </a></li>
         </ul>
 
 
 
-          <form class="navbar-form navbar-right" role="form">
+          <form action='../logout.php' method='post' class="navbar-form navbar-right" role="form">
             <button type="submit" class="btn btn-success">Cerrar Secion</button>
           </form>
         </div><!--/.navbar-collapse -->
