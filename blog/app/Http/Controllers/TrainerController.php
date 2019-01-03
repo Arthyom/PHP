@@ -2,7 +2,9 @@
 
 namespace laraDex\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use laraDex\Trainer;
 
 class TrainerController extends Controller
 {
@@ -33,7 +35,10 @@ class TrainerController extends Controller
      */
     public function store(Request $request)
     {
-       return "se ha agregado al usuario ". $request->input('nombre');
+       $newTrainer = new Trainer();
+       $newTrainer->name = $request->input('nombre');
+       $newTrainer->save();
+       return "Se ha creado un nuevo entrenador";
     }
 
     /**
