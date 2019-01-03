@@ -33,7 +33,7 @@ class TrainerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       return "se ha agregado al usuario ". $request->input('nombre');
     }
 
     /**
