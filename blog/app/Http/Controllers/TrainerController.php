@@ -4,6 +4,7 @@ namespace laraDex\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use laraDex\Trainer;
 
 class TrainerController extends Controller
@@ -37,8 +38,12 @@ class TrainerController extends Controller
      */
     public function store(Request $request)
     {
+       $avatarName = time().$request->file('avatar')->getClientOriginalName();
        $newTrainer = new Trainer();
+       Storage::move(public_path().'/images/',$avatarName);
        $newTrainer->name = $request->input('nombre');
+       $newTrainer->avatar($avatarName);
+
        $newTrainer->save();
        return "Se ha creado un nuevo entrenador";
     }
