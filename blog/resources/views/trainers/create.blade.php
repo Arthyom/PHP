@@ -4,6 +4,8 @@
 
 
 @section('contenido')
+@include('common.validate')
+
 {!! Form::open(['route'=>'trainers.store', 'method'=>'post', 'files'=>true]) !!}
     @include('trainers.addEdit')
     {!! Form::submit('Agregar', ['class'=>'btn btn-primary']) !!}

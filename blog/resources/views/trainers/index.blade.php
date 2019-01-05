@@ -4,7 +4,8 @@
 
 @section('contenido')
 
-  
+@include('common.okAdd')
+
 <div class="row">
   @foreach($trainers as $trainer)
   <div class="col-sm" >

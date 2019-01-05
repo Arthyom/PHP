@@ -6,6 +6,7 @@ namespace laraDex\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use laraDex\Trainer;
+use laraDex\Http\Requests\validateTrainer;
 
 class TrainerController extends Controller
 {
@@ -36,7 +37,7 @@ class TrainerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(validateTrainer $request)
     {
        $file = $request->file('avatar');
        $name = $file->getClientOriginalName();
@@ -48,7 +49,7 @@ class TrainerController extends Controller
        $newTrainer->slug = $request->input('slug');
        $newTrainer->description = $request->input('description');
        $newTrainer->save();
-       return "Se ha creado un nuevo entrenador";
+       return redirect('trainers')->with('okMsgStatus','Se ha Agregado el Registro Correctamente' );
     }
 
     /**
@@ -84,7 +85,7 @@ class TrainerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Trainer $trainer)
+    public function update(validateTrainer $request, Trainer $trainer)
     {
 
        $file = $request->file('avatar');
@@ -94,7 +95,7 @@ class TrainerController extends Controller
         $trainer->fill($request->except('avatar'));
         $trainer->avatar=$name;
         $trainer->save();
-        return 'se quiere actualizar a: '. $trainer->name ;
+        return redirect('trainers')->with('okMsgStatus','Se ha Editado el Registro Correctamente' );
     }
 
     /**
