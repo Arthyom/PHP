@@ -43,8 +43,10 @@ class TrainerController extends Controller
        $move = $file->move(public_path().'/images/', $name);
 
        $newTrainer = new Trainer();
-       $newTrainer->name   = $request->input('nombre');
+       $newTrainer->name   = $request->input('name');
        $newTrainer->avatar = $name;
+       $newTrainer->slug = $request->input('slug');
+       $newTrainer->description = $request->input('description');
        $newTrainer->save();
        return "Se ha creado un nuevo entrenador";
     }
@@ -55,9 +57,9 @@ class TrainerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show( Trainer $trainer)
     {
-        $trainer = Trainer::find($id);
+      //  $trainer = Trainer::find($id);
         return view('trainers.show', compact('trainer'));
     }
 

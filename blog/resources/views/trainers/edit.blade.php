@@ -3,18 +3,9 @@
 @section('titulo', 'Editar Entrenador')
 
 @section('contenido')
+{!! Form::model($trainer, ['route'=>['trainers.update',$trainer], 'method'=>'put', 'files'=>true]) !!}
+    @include('trainers.addEdit')
+    {!! Form::submit('Aceptar', ['class'=>'btn btn-primary']) !!}
+{!! Form::close()!!}
 
-    <form class="form-group" action="/trainers/{{$trainer->id}}" method="post" enctype="multipart/form-data">
-    @csrf
-    @method('put')
-    <div class="form-group">
-    <label >Nombre</label>
-    <input type="text" name="name" value="{{$trainer->name}}" class="form-control">
-    <label >Avatar</label>
-    <input type="file" name="avatar" class="form-control">
-    <input type="submit" value="Agregar" class="btn btn-primary">
-    </div>
-
-    
-    </form>
 @endsection
