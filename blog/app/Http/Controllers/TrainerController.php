@@ -38,12 +38,13 @@ class TrainerController extends Controller
      */
     public function store(Request $request)
     {
-       $avatarName = time().$request->file('avatar')->getClientOriginalName();
-       $newTrainer = new Trainer();
-       Storage::move(public_path().'/images/',$avatarName);
-       $newTrainer->name = $request->input('nombre');
-       $newTrainer->avatar($avatarName);
+       $file = $request->file('avatar');
+       $name = $file->getClientOriginalName();
+       $move = $file->move(public_path().'/images/', $name);
 
+       $newTrainer = new Trainer();
+       $newTrainer->name   = $request->input('nombre');
+       $newTrainer->avatar = $name;
        $newTrainer->save();
        return "Se ha creado un nuevo entrenador";
     }
@@ -56,7 +57,8 @@ class TrainerController extends Controller
      */
     public function show($id)
     {
-        //
+        $trainer = Trainer::find($id);
+        return view('trainers.show', compact('trainer'));
     }
 
     /**
@@ -65,9 +67,12 @@ class TrainerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Trainer $trainer)
     {
-        //
+        
+        //$trainer = Trainer::find($id); // usando un implicit binding
+        
+        return view('trainers.edit', compact('trainer'));
     }
 
     /**
@@ -77,9 +82,17 @@ class TrainerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Trainer $trainer)
     {
-        //
+
+       $file = $request->file('avatar');
+       $name = $file->getClientOriginalName();
+       $move = $file->move(public_path().'/images/', $name);
+
+        $trainer->fill($request->except('avatar'));
+        $trainer->avatar=$name;
+        $trainer->save();
+        return 'se quiere actualizar a: '. $trainer->name ;
     }
 
     /**
