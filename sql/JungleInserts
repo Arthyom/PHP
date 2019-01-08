@@ -1,0 +1,29 @@
+INSERT INTO `petsJungle`.`refugios` (`nombre`, `direccion`, `telefono`, `horario`, `masctoas`) VALUES ('amigo infiel', 'juarez #27', '44573435', '10am a 8pm', '450');
+
+
+INSERT INTO `petsJungle`.`refugios` (`nombre`, `direccion`, `telefono`, `horario`, `masctoas`) VALUES ('muerdeme la pata', 'juarez #28', '444444', '7am a 8pm', '500');
+
+INSERT INTO `petsJungle`.`refugios` (`nombre`, `direccion`, `telefono`, `horario`, `masctoas`) VALUES ('ya no sé', 'sn', 'nt', 'todo el dia', '200');
+
+
+INSERT INTO `petsJungle`.`usuarios` (`contra`, `nombre`, `tMascotas`, `peligrocidad`, `telefono`, `direccion`, `edad`, `observaciones`, `rol`) VALUES ('123s4', 'admins1', '0', '0', '0', '0', '0', '0', 'admin');
+INSERT INTO `petsJungle`.`usuarios` (`contra`, `nombre`, `tMascotas`, `peligrocidad`, `telefono`, `direccion`, `edad`, `observaciones`, `rol`) VALUES ('5678', 'user1', '2', 'nula', '44573435', 'juares #27', '12', 'ninguna', 'user');
+
+INSERT INTO `petsJungle`.`mascotas` (`nombre`, `color`, `edad`, `historia`, `hMedico`, `imagen`, `adoptado`, `refugios_id`) VALUES ('perro1', 'rojo', '34', 'ninguna', 'ninguna', 'ninguna', '0', '1');
+
+INSERT INTO `petsJungle`.`mascotas` (`nombre`, `color`, `edad`, `historia`, `hMedico`, `imagen`, `adoptado`, `refugios_id`) VALUES ('perro2', 'azul', '15', 'ninguna', 'niguna', 'ninguna', '0', '1');
+
+INSERT INTO `petsJungle`.`mascotas` (`nombre`, `color`, `edad`, `historia`, `hMedico`, `imagen`, `adoptado`, `refugios_id`) VALUES ('perro3', 'amarillo', '15', 'ninguno', 'niguna', 'niguna', '0', '1');
+
+
+
+INSERT INTO `petsJungle`.`usuarios` (`contra`, `nombre`, `tMascotas`, `peligrocidad`, `telefono`, `direccion`, `edad`, `observaciones`, `rol`) VALUES ('1111', 'user2', '4', 'nula', '484848', '-', '15', '0', 'user');
+
+INSERT INTO `petsJungle`.`solicitudes` (`fecha`, `mascotas_id`, `usuarios_id`, `refugios_id`, `fechaRespuesta`) VALUES ('2018-02-21', '1', '1', '1', '2018-02-24');
+
+
+INSERT INTO `petsJungle`.`solicitudes` (`fecha`, `mascotas_id`, `usuarios_id`, `refugios_id`, `fechaRespuesta`) VALUES ('2018-05-02', '2', '1', '1', '2018-12-01');
+
+INSERT INTO `petsJungle`.`mascotas` (`nombre`, `color`, `edad`, `historia`, `hMedico`, `imagen`, `adoptado`, `refugios_id`) VALUES ('perro4', 'verde', '10', 'ninguna', 'ninguna', 'ninguna', '1', '1');
+
+INSERT INTO `petsJungle`.`propietarios` (`fechaReclamo`, `mascotas_id`, `usuarios_id`) VALUES ('2018-05-21', '4', '1');
