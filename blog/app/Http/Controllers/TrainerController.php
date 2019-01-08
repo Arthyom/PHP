@@ -104,8 +104,9 @@ class TrainerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Trainer $trainer)
     {
-        //
+        $trainer->delete();
+        return redirect('trainers')->with('okMsgStatus','Se ha Borrado el Registro Correctamente' );
     }
 }
