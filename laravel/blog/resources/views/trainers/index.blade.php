@@ -1,4 +1,5 @@
 @extends('layout.app')
+<h1>Olis</h1>
 
 @section('titulo', 'LaraDex - Listado')
 
